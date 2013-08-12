@@ -160,7 +160,7 @@ function edd_sample_deactivate_license() {
 	// listen for our activate button to be clicked
 	if( isset( $_POST['edd_license_deactivate'] ) ) {
 
-		// run a quick security check
+		// run a quick security  check
 	 	if( ! check_admin_referer( 'edd_sample_nonce', 'edd_sample_nonce' ) )
 			return; // get out if we didn't click the Activate button
 
