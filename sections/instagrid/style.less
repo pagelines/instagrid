@@ -1,0 +1,58 @@
+.instagrid-image {
+	width:25%;
+	opacity:0;
+	position: absolute;
+	img {
+		width:100%;
+		height:auto;
+	}
+}
+
+.instagrid-txt {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 15px;
+    position:relative;
+    font-weight:bold;
+    a {
+    	color:@pl-base;
+    }
+}
+
+.instagrid-overlay {
+	opacity:0;
+    text-align: center;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(red(@linkColor), green(@linkColor), blue(@linkColor), 0.70);
+    color:white;
+}
+
+.instagrid-overlay:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.instagrid-image-special {
+	width: 50%;
+}
+.instagrid-button-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+@media only screen and (max-width : 767px) {
+	.instagrid-image { 
+		width:50%;
+	}
+	.instagrid-image-special {
+		width: 100%;
+	}
+}
+
