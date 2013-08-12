@@ -4,10 +4,9 @@
 	Author: Aleksander Hansson
 	Author URI: http://ahansson.com
 	Demo: http://instagrid.ahansson.com
-	Version: 1.0
 	Class Name: InstaGrid
-	Description:
-	Cloning:false
+	Description: InstaGrid is a section that lets you display Instagram images on your site.
+	Cloning: false
 	V3: true
 */
 
@@ -22,8 +21,6 @@ class InstaGrid extends PageLinesSection {
 		wp_enqueue_script( 'imagesloaded', $this->base_url.'/js/imagesloaded.pkgd.min.js' );
 
 		wp_enqueue_script( 'klass', $this->base_url.'/js/klass.min.js' );
-
-		wp_enqueue_script( 'photoswipe-jquery', $this->base_url.'/js/code.photoswipe.jquery-3.0.5.min.js' );
 
 	}
 
