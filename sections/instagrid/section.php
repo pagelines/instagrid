@@ -5,6 +5,7 @@
 	Author URI: http://ahansson.com
 	Demo: http://instagrid.ahansson.com
 	Class Name: InstaGrid
+	Version: 1.0
 	Description: InstaGrid is a section that lets you display Instagram images on your site.
 	Cloning: false
 	V3: true
