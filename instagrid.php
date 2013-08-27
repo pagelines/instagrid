@@ -3,12 +3,12 @@
 Plugin Name: InstaGrid
 Plugin URI: http://instagrid.ahansson.com
 Description: Insta Grid is a responsive image grid that is pulling images from Instagram.
-Version: 1.2
+Version: 1.2.2
 Author: Aleksander Hansson
 Author URI: http://ahansson.com
 */
 
-define( 'AH_STORE_URL', 'http://shop.ahansson.com' );
+define( 'AH_INSTAGRID_STORE_URL', 'http://shop.ahansson.com' );
 define( 'AH_INSTAGRID_NAME', 'InstaGrid' );
 
 if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
@@ -20,8 +20,8 @@ if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
 $license_key = trim( get_option( 'ah_instagrid_license_key' ) );
 
 // setup the updater
-$edd_updater = new EDD_SL_Plugin_Updater( AH_STORE_URL, __FILE__, array(
-		'version' 	=> '1.2', 				// current version number
+$edd_updater = new EDD_SL_Plugin_Updater( AH_INSTAGRID_STORE_URL, __FILE__, array(
+		'version' 	=> '1.2.2', 				// current version number
 		'license' 	=> $license_key, 		// license key (used get_option above to retrieve from DB)
 		'item_name' => AH_INSTAGRID_NAME, 		// name of this plugin
 		'author' 	=> 'Aleksander Hansson' // author of this plugin
@@ -39,7 +39,7 @@ function ah_instagrid_license_page() {
 	$status 	= get_option( 'ah_instagrid_license_status' );
 	?>
 	<div class="wrap">
-		<h2><?php _e('Plugin License Options'); ?></h2>
+		<h2><?php _e('InstaGrid License Options'); ?></h2>
 		<form method="post" action="options.php">
 
 			<?php settings_fields('ah_instagrid_license'); ?>
@@ -115,7 +115,7 @@ function ah_instagrid_activate_license() {
 		);
 
 		// Call the custom API.
-		$response = wp_remote_get( add_query_arg( $api_params, AH_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
+		$response = wp_remote_get( add_query_arg( $api_params, AH_INSTAGRID_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
@@ -159,7 +159,7 @@ function ah_instagrid_deactivate_license() {
 		);
 
 		// Call the custom API.
-		$response = wp_remote_get( add_query_arg( $api_params, AH_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
+		$response = wp_remote_get( add_query_arg( $api_params, AH_INSTAGRID_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
@@ -177,7 +177,7 @@ function ah_instagrid_deactivate_license() {
 add_action('admin_init', 'ah_instagrid_deactivate_license');
 
 
-function ba_slabtext_check_license() {
+function ah_instagrid_check_license() {
 
 	global $wp_version;
 
@@ -190,7 +190,7 @@ function ba_slabtext_check_license() {
 	);
 
 	// Call the custom API.
-	$response = wp_remote_get( add_query_arg( $api_params, AH_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
+	$response = wp_remote_get( add_query_arg( $api_params, AH_INSTAGRID_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
 
 
 	if ( is_wp_error( $response ) )

@@ -98,8 +98,6 @@ class InstaGrid extends PageLinesSection {
 
 				            		var items = data.contents;
 
-									console.log(data);
-
 									for (var i=0;i<items.length;i++){
 										var img = '<div class="instagrid-image instagrid-image<?php echo $prefix; ?>"><img src="' + items[i].image + '"><a id="instagrid-link" href="' + items[i].link + '" target="_blank"><div class="instagrid-overlay instagrid-overlay<?php echo $prefix; ?>"><div class="instagrid-txt"><i class="icon-heart"></i> ' + items[i].like + '</div></div></a></div>';
 										console.log(img);
