@@ -73,7 +73,7 @@
 
 	// Collect everything for json output
 		$contents = array();
-		$i=0;
+		$i=1;
 		foreach ($media as $m) if ($i < $count) {
 			$contents[] = array(
 				'image' => $m->getStandardRes()->url,

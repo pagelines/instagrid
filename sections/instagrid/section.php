@@ -5,7 +5,6 @@
 	Author URI: http://ahansson.com
 	Demo: http://instagrid.ahansson.com
 	Class Name: InstaGrid
-	Version: 1.0
 	Description: InstaGrid is a section that lets you display Instagram images on your site.
 	Cloning: false
 	V3: true
@@ -219,8 +218,8 @@ class InstaGrid extends PageLinesSection {
 		    		<div id="instagrid<?php echo $prefix; ?>">
 
 					    <?php
-						    $i=0;
-						    foreach ($media as $m) if ($i < $count) {
+						    $i=1;
+						    foreach ($media as $m) if ($i < $count ) {
 						        echo '<div class="instagrid-image instagrid-image'.$prefix.'"><img src="'.$m->getStandardRes()->url.'"><a id="instagrid-link" href="'.$m->getLink().'" target="_blank"><div class="instagrid-overlay instagrid-overlay'.$prefix.'"><div class="instagrid-txt"><i class="icon-heart"></i> '.$m->getLikesCount().'</div></div></a></div>';
 						    	$i +=1;
 						    }
@@ -256,119 +255,119 @@ class InstaGrid extends PageLinesSection {
 
 		$options[] = array(
 
-			'title' => __( 'Settings', 'beefy' ),
+			'title' => __( 'Settings', 'instagrid' ),
 			'type'	=> 'multi',
 			'opts'	=> array(
 
 				array(
 	    	   		'key' => 'access_token',
 	    	    	'type'    =>  'text',
-	    	    	'label'  =>  __('Instagram Access Token', 'beefy'),
-		            'help'	=> __('<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">Find your access token here</a>.', 'beefy' ),
+	    	    	'label'  =>  __('Instagram Access Token', 'instagrid'),
+		            'help'	=> __('<a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">Find your access token here</a>.', 'instagrid' ),
 	    	    ),
 
 	    	    array(
 	    	    	'key' => 'type',
-					'label' => __('Type', 'beefy'),
+					'label' => __('Type', 'instagrid'),
 					'type' => 'select',
 					'default' => '',
 					'opts' => array(
-						'tag'   => array( 'name' => __('Tag'	, 'beefy' )),
-						'location'   => array( 'name' => __('Location'	, 'beefy' )),
-						'user'   => array( 'name' => __('User'	, 'beefy' )),
-						''   => array( 'name' => __('Popular'	, 'beefy' ))
+						'tag'   => array( 'name' => __('Tag'	, 'instagrid' )),
+						'location'   => array( 'name' => __('Location'	, 'instagrid' )),
+						'user'   => array( 'name' => __('User'	, 'instagrid' )),
+						''   => array( 'name' => __('Popular'	, 'instagrid' ))
 					),
 	    	    ),
 
 	    	    array(
 	    	    	'key' => 'count',
-					'label' => __('Number of images you want to display', 'beefy'),
+					'label' => __('Number of images you want to display', 'instagrid'),
 					'type' => 'count_select',
-					'default' => '9',
+					'default' => '8',
 					'count_start'   => 1,
 		           	'count_number'  => 20,
-		           	'help'	=> __('Sometimes there is a bug in the Instagram API which prevents to get 20 images.', 'beefy' ),
+		           	'help'	=> __('Sometimes there is a bug in the Instagram API which prevents to get 20 images.', 'instagrid' ),
 	    	    ),
 
 	    	    array(
 	    	    	'key' => 'special',
-					'label' => __('Every nth image is special', 'beefy'),
+					'label' => __('Every nth image is special', 'instagrid'),
 					'type' => 'count_select',
 					'default' => '',
 					'count_start'   => 1,
 		           	'count_number'  => 10,
-		           	'help'	=> __('This option gives every nth image a special class.', 'beefy' ),
+		           	'help'	=> __('This option gives every nth image a special class.', 'instagrid' ),
 	    	    ),
 
 	    	    array(
 	    	    	'key' => 'button',
-					'label' => __('Button?', 'beefy'),
+					'label' => __('Button?', 'instagrid'),
 					'type' => 'select',
 					'default' => 'yes',
 					'opts' => array(
-						'yes'   => array( 'name' => __('Yes'	, 'beefy' )),
-						'no'   => array( 'name' => __('No'	, 'beefy' )),
+						'yes'   => array( 'name' => __('Yes'	, 'instagrid' )),
+						'no'   => array( 'name' => __('No'	, 'instagrid' )),
 					),
 	    	    ),
 
 	    	    array(
 	    	    	'key' => 'button_type',
-					'label' => __('Button type', 'beefy'),
+					'label' => __('Button type', 'instagrid'),
 					'type' => 'select_button',
 					'default' => 'btn-primary',
-					'help'	=> __('Choose the type of button you want.', 'beefy' ),
+					'help'	=> __('Choose the type of button you want.', 'instagrid' ),
 	    	    ),
 			)
 		);
 
 		$options[] = array(
-			'title'     =>  __('Tag Options', 'beefy'),
+			'title'     =>  __('Tag Options', 'instagrid'),
 			'type'     => 'multi',
 			'opts'   => array(
 				array(
 	    	   		'key' => 'tag',
 	    	    	'type'    =>  'text',
-	    	    	'label'  =>  __('Instagram Tag', 'beefy'),
-		            'help'	=> __('Do not use # in front of tag! You can only use one tag!', 'beefy' ),
+	    	    	'label'  =>  __('Instagram Tag', 'instagrid'),
+		            'help'	=> __('Do not use # in front of tag! You can only use one tag!', 'instagrid' ),
 		            'default' => '',
 	    	    ),
 			),
 		);
 
 		$options[] = array(
-			'title'     =>  __('Location Options', 'beefy'),
+			'title'     =>  __('Location Options', 'instagrid'),
 			'type'     => 'multi',
 			'opts'   => array(
 				array(
 	    	   		'key' => 'latitude',
 	    	    	'type'    =>  'text',
-	    	    	'label'  =>  __('Latitude', 'beefy'),
-		            'help'	=> __('Latitude of the location. For example: "48.850000"', 'beefy' ),
+	    	    	'label'  =>  __('Latitude', 'instagrid'),
+		            'help'	=> __('Latitude of the location. For example: "48.850000"', 'instagrid' ),
 	    	    ),
 	    	    array(
 	    	   		'key' => 'longitude',
 	    	    	'type'    =>  'text',
-	    	    	'label'  =>  __('Longitude', 'beefy'),
-		            'help'	=> __('Longitude of the location. For example: "2.260000"', 'beefy' ),
+	    	    	'label'  =>  __('Longitude', 'instagrid'),
+		            'help'	=> __('Longitude of the location. For example: "2.260000"', 'instagrid' ),
 	    	    ),
 	    	    array(
 	    	   		'key' => 'distance',
 	    	    	'type'    =>  'text',
-	    	    	'label'  =>  __('Distance', 'beefy'),
-		            'help'	=> __('The distance you want images pulled from in meters. (default: 1000)', 'beefy' ),
+	    	    	'label'  =>  __('Distance', 'instagrid'),
+		            'help'	=> __('The distance you want images pulled from in meters. (default: 1000)', 'instagrid' ),
 	    	    ),
 			),
 		);
 
 		$options[] = array(
-			'title'     =>  __('User Options', 'beefy'),
+			'title'     =>  __('User Options', 'instagrid'),
 			'type'     => 'multi',
 			'opts'   => array(
 				array(
 	    	   		'key' => 'username',
 	    	    	'type'    =>  'text',
-	    	    	'label'  =>  __('Username', 'beefy'),
-		            'help'	=> __('Instagram Username', 'beefy' ),
+	    	    	'label'  =>  __('Username', 'instagrid'),
+		            'help'	=> __('Instagram Username', 'instagrid' ),
 	    	    ),
 			),
 		);

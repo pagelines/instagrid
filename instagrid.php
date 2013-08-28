@@ -3,7 +3,7 @@
 Plugin Name: InstaGrid
 Plugin URI: http://instagrid.ahansson.com
 Description: InstaGrid is a responsive image grid that pulls images from Instagram
-Version: 1.2.3
+Version: 1.2.4
 Author: Aleksander Hansson
 Author URI: http://ahansson.com
 Filter: gallery, social
@@ -24,7 +24,7 @@ $license_key = trim( get_option( 'ah_instagrid_license_key' ) );
 
 // setup the updater
 $edd_updater = new EDD_SL_Plugin_Updater( AH_INSTAGRID_STORE_URL, __FILE__, array(
-		'version' 	=> '1.2.3', 				// current version number
+		'version' 	=> '1.2.4', 				// current version number
 		'license' 	=> $license_key, 		// license key (used get_option above to retrieve from DB)
 		'item_name' => AH_INSTAGRID_NAME, 		// name of this plugin
 		'author' 	=> 'Aleksander Hansson' // author of this plugin
@@ -42,7 +42,7 @@ function ah_instagrid_license_page() {
 	$status 	= get_option( 'ah_instagrid_license_status' );
 	?>
 	<div class="wrap">
-		<h2><?php _e('InstaGrid License Options'); ?></h2>
+		<h2><?php echo 'InstaGrid License Options'; ?></h2>
 		<form method="post" action="options.php">
 
 			<?php settings_fields('ah_instagrid_license'); ?>
@@ -51,26 +51,26 @@ function ah_instagrid_license_page() {
 				<tbody>
 					<tr valign="top">
 						<th scope="row" valign="top">
-							<?php _e('License Key'); ?>
+							<?php echo 'License Key'; ?>
 						</th>
 						<td>
 							<input id="ah_instagrid_license_key" name="ah_instagrid_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
-							<label class="description" for="ah_instagrid_license_key"><?php _e('Enter your license key'); ?></label>
+							<label class="description" for="ah_instagrid_license_key"><?php echo 'Enter your license key'; ?></label>
 						</td>
 					</tr>
 					<?php if( false !== $license ) { ?>
 						<tr valign="top">
 							<th scope="row" valign="top">
-								<?php _e('Activate License'); ?>
+								<?php echo 'Activate License'; ?>
 							</th>
 							<td>
 								<?php if( $status !== false && $status == 'valid' ) { ?>
-									<span style="color:green;"><?php _e('active'); ?></span>
+									<span style="color:green;"><?php echo 'active'; ?></span>
 									<?php wp_nonce_field( 'ah_instagrid_nonce', 'ah_instagrid_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="ah_instagrid_license_deactivate" value="<?php _e('Deactivate License'); ?>"/>
+									<input type="submit" class="button-secondary" name="ah_instagrid_license_deactivate" value="<?php echo 'Deactivate License'; ?>"/>
 								<?php } else {
 									wp_nonce_field( 'ah_instagrid_nonce', 'ah_instagrid_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="ah_instagrid_license_activate" value="<?php _e('Activate License'); ?>"/>
+									<input type="submit" class="button-secondary" name="ah_instagrid_license_activate" value="<?php echo 'Activate License'; ?>"/>
 								<?php } ?>
 							</td>
 						</tr>
