@@ -3,7 +3,7 @@
 Plugin Name: InstaGrid
 Plugin URI: http://instagrid.ahansson.com
 Description: InstaGrid is a responsive image grid that pulls images from Instagram
-Version: 1.2.4
+Version: 1.2.5
 Author: Aleksander Hansson
 Author URI: http://ahansson.com
 Filter: gallery, social
@@ -24,7 +24,7 @@ $license_key = trim( get_option( 'ah_instagrid_license_key' ) );
 
 // setup the updater
 $edd_updater = new EDD_SL_Plugin_Updater( AH_INSTAGRID_STORE_URL, __FILE__, array(
-		'version' 	=> '1.2.4', 				// current version number
+		'version' 	=> '1.2.5', 				// current version number
 		'license' 	=> $license_key, 		// license key (used get_option above to retrieve from DB)
 		'item_name' => AH_INSTAGRID_NAME, 		// name of this plugin
 		'author' 	=> 'Aleksander Hansson' // author of this plugin

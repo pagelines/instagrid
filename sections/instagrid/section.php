@@ -218,7 +218,7 @@ class InstaGrid extends PageLinesSection {
 		    		<div id="instagrid<?php echo $prefix; ?>">
 
 					    <?php
-						    $i=1;
+						    $i=0;
 						    foreach ($media as $m) if ($i < $count ) {
 						        echo '<div class="instagrid-image instagrid-image'.$prefix.'"><img src="'.$m->getStandardRes()->url.'"><a id="instagrid-link" href="'.$m->getLink().'" target="_blank"><div class="instagrid-overlay instagrid-overlay'.$prefix.'"><div class="instagrid-txt"><i class="icon-heart"></i> '.$m->getLikesCount().'</div></div></a></div>';
 						    	$i +=1;
