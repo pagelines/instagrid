@@ -8,6 +8,7 @@
 	Description: InstaGrid is a section that lets you display Instagram images on your site.
 	Cloning: false
 	V3: true
+	Filter: gallery, social
 */
 
 class InstaGrid extends PageLinesSection {
